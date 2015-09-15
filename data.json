@@ -1,0 +1,222 @@
+{
+    "project": {},
+    "files": {
+        "client/dist/lib/Combust.js": {
+            "name": "client/dist/lib/Combust.js",
+            "modules": {},
+            "classes": {
+                "Combust": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Combust": {
+            "name": "Combust",
+            "shortname": "Combust",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "client/dist/lib/Combust.js",
+            "line": 5,
+            "description": "Combust class always maintains a path to part of the database and has various methods for reading and writing data to it,\nas well as listening for changes in data at the specified path.",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "client/dist/lib/Combust.js",
+            "line": 117,
+            "description": "Change the path of the Combust object to point to one of the children of the current path.\nMethod is chainable.",
+            "itemtype": "method",
+            "name": "child",
+            "params": [
+                {
+                    "name": "childName",
+                    "description": "childName Name of the child of the current path to point Combust at",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns a mutated instance of the same Combust instance so that it can be chained.",
+                "type": "Object"
+            },
+            "class": "Combust"
+        },
+        {
+            "file": "client/dist/lib/Combust.js",
+            "line": 140,
+            "description": "Pushes an object as a new child at the current path.",
+            "itemtype": "method",
+            "name": "push",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "object The object to push as a new child at the current path.",
+                    "type": "Object"
+                },
+                {
+                    "name": "*callback",
+                    "description": "callback The callback to be executed once the new child has been synchronized with the database. Optional parameter.",
+                    "type": "Callback"
+                }
+            ],
+            "return": {
+                "description": "Returns a new instance of Combust that points to the path of the newly created child.",
+                "type": "Object"
+            },
+            "class": "Combust"
+        },
+        {
+            "file": "client/dist/lib/Combust.js",
+            "line": 173,
+            "description": "Deletes an object at the current path.",
+            "itemtype": "method",
+            "name": "delete",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "object The object to delete at the current path.",
+                    "type": "Object"
+                },
+                {
+                    "name": "*callback",
+                    "description": "callback The callback to be executed once the object has been deleted at the path in the database. Optional parameter.",
+                    "type": "Callback"
+                }
+            ],
+            "class": "Combust"
+        },
+        {
+            "file": "client/dist/lib/Combust.js",
+            "line": 196,
+            "description": "Sets an object at the current path.",
+            "itemtype": "method",
+            "name": "set",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "object The object to set at the current path.",
+                    "type": "Object"
+                },
+                {
+                    "name": "*callback",
+                    "description": "callback The callback to be executed once the object has been set at the path in the database. Optional parameter.",
+                    "type": "Callback"
+                }
+            ],
+            "class": "Combust"
+        },
+        {
+            "file": "client/dist/lib/Combust.js",
+            "line": 225,
+            "description": "Updates object at the current path.",
+            "itemtype": "method",
+            "name": "update",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "object The object to update the current path with.",
+                    "type": "Object"
+                },
+                {
+                    "name": "*callback",
+                    "description": "callback The callback to be executed once the object has been updated at the path in the database. Optional parameter.",
+                    "type": "Callback"
+                }
+            ],
+            "class": "Combust"
+        },
+        {
+            "file": "client/dist/lib/Combust.js",
+            "line": 252,
+            "description": "Creates an event listener for a specified event at the current path.",
+            "itemtype": "method",
+            "name": "on",
+            "params": [
+                {
+                    "name": "eventType",
+                    "description": "eventType The type of event to listen for at the current path - currently supported values are \"child_added\", \"child_changed\", \"child_removed\", \"value\"",
+                    "type": "String"
+                },
+                {
+                    "name": "*callback",
+                    "description": "callback(newChild) The callback to be executed once the specified event is triggered. Accepts the new child as the only parameter.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Combust"
+        },
+        {
+            "file": "client/dist/lib/Combust.js",
+            "line": 330,
+            "description": "Attempts to create a new user",
+            "itemtype": "method",
+            "name": "newUser",
+            "params": [
+                {
+                    "name": "newUser",
+                    "description": "newUser Object that contains the credentials of the user to be added.",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "username",
+                            "description": "username Username to associate with new user."
+                        },
+                        {
+                            "name": "password",
+                            "description": "password Password to associate with new user."
+                        }
+                    ]
+                },
+                {
+                    "name": "*callback(response)",
+                    "description": "callback(response) The callback to be executed once a response from the server is received. Accepts response as the only parameter.\nResponse has two properties: \n1) 'success' which indicates whether the new user was successfully created or not.\n2) 'id' which will contains the new users id if the operation was successful.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Combust"
+        },
+        {
+            "file": "client/dist/lib/Combust.js",
+            "line": 358,
+            "description": "Attempts to authenticate user credentials. If authentication is successful, the JSON Web Token will be stored in local storage, as well as on the Combust instance.",
+            "itemtype": "method",
+            "name": "authenticate",
+            "params": [
+                {
+                    "name": "crendentials",
+                    "description": "credentials Object that contains the username and password of the user to authenticate.",
+                    "type": "Object"
+                },
+                {
+                    "name": "credentials.username",
+                    "description": "username Username of the user authenticate."
+                },
+                {
+                    "name": "credentials.password",
+                    "description": "password Password of the user to authenticate."
+                },
+                {
+                    "name": "*callback(response)",
+                    "description": "callback(response) The callback to be executed once a response from the server is received. Accepts response as the only parameter.\nResponse has three properties: \n1) 'success' (Boolean) which indicates whether the user was successfully authenticated or not.\n2) 'id' (String) Contains the authenticated users id - only present if success is true.\n3) 'token' (String) Contains the authenticated users authentication JSON Web token - only present is success is true.",
+                    "type": "Function"
+                }
+            ],
+            "class": "Combust"
+        },
+        {
+            "file": "client/dist/lib/Combust.js",
+            "line": 389,
+            "description": "Unauthenticates the current user by disconnecting the socket connection, and delete the authenticaton JSON Web Token from the Combust instance, as well as local storage.",
+            "itemtype": "method",
+            "name": "unauthenticate",
+            "class": "Combust"
+        }
+    ],
+    "warnings": []
+}
